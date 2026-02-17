@@ -22,11 +22,6 @@ class DaftarAcara extends Component
         $this->slug = Str::slug($value);
     }
 
-    public function render()
-    {
-        return view('livewire.daftar-acara');
-    }
-
     public function simpanAcara()
     {
         $rules = [ 
@@ -57,8 +52,14 @@ class DaftarAcara extends Component
         
         Arr::set($validated, 'waktu', $this->tarikh);
 
-        //dd($validated);
-
         Acara::create($validated);
+
+        session()->flash('status', 'Acara berjaya didaftarkan.');
+        $this->redirectRoute('acara.list');
+    }
+
+    public function render()
+    {
+        return view('livewire.daftar-acara');
     }
 }

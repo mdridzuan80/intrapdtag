@@ -1,9 +1,9 @@
 <div class="container-fluid px-4">
-        <h1 class="mt-4">Daftar Acara</h1>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Daftar Acara</li>
-        </ol>
-        <div class="row">
+    <h1 class="mt-4">Daftar Acara</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Daftar Acara</li>
+    </ol>
+    <div class="row">
         <div class="col-md-8">
             <div class="card mb-4">
                 <div class="card-body">
@@ -44,12 +44,13 @@
             </div>
         </div>
 
-         <div class="col-md-4">
+        <div class="col-md-4">
             <div class="card mb-4">
                 <div class="card-body">
-                     <h5>Nota:</h5>
-                     <p class="card-text">Sila lengkapi semua maklumat yang bertanda (*) sebelum menyimpan acara.</p>
+                    <h5>Nota:</h5>
+                    <p class="card-text">Sila lengkapi semua maklumat yang bertanda (*) sebelum menyimpan acara.</p>
                 </div>
             </div>
         </div>
     </div>
+</div>
