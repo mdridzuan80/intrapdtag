@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\DaftarAcara;
+use App\Livewire\ListAcara;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,8 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Daftar acara routes
-    Route::get('/acara', [AcaraController::class, 'listAcara'])->name('acara.list');
-    Route::get('/acara/create', [AcaraController::class, 'create']);
+    Route::get('/acara', ListAcara::class)->name('acara.list');
     Route::get('/acara/create', DaftarAcara::class)->name('acara.create');
 });
 

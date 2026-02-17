@@ -11,8 +11,9 @@ class AcaraController extends Controller
         //return view('acara.index');
     }
 
-    public function create()
+    public function create(Request $request)
     {
+
         return view('acara.create');
     }
 

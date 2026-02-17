@@ -15,6 +15,9 @@
                             </a>
                             <div class="collapse" id="collapseevents" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{ route("acara.list") }}">Senarai Acara</a>
+                                </nav>
+                                <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ route("acara.create") }}">Daftar Acara</a>
                                 </nav>
                             </div>
