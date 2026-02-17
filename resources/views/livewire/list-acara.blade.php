@@ -16,7 +16,7 @@
                     
                      @if ($acara->isEmpty())
                         <div class="alert alert-info" role="alert">
-                            Tiada acara untuk dipaparkan. Sila tambah acara baru.
+                            Tiada acara untuk dipaparkan. Sila tambah acara baru <a href="{{ route('acara.create') }}" wire:navigate>di sini</a>.
                         </div>
                     @else
                         <div class="datatable-container">
