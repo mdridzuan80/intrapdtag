@@ -23,6 +23,13 @@
                         {{-- Use {!! !!} to render the raw SVG output --}}
                         {!! $qrCodeSvg !!}
                         <p class="card-text">URL: <a href="{{ route('acara.kehadiran.daftar', $this->acara->slug) }}" target="_blank">{{ route('acara.kehadiran.daftar', $this->acara->slug) }}</a></p>
+                        <div>
+                            <button type="button" class="btn btn-primary" wire:click="downloadPdf" wire:loading.attr="disabled">
+                                <span wire:loading.remove>Muat turun PDF</span>
+                                <span wire:loading>Memuat turun pdf...</span>
+                            </button>
+                        </div>
+
                     @endif
                 </div>
             </div>
