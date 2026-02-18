@@ -17,4 +17,9 @@ class AcaraController extends Controller
         return view('acara.create');
     }
 
+    public function daftar()
+    {
+        return view('acara.daftar');
+    }
+
 }
