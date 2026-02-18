@@ -57,9 +57,9 @@
                                                     <i class="fa-solid fa-ellipsis"></i>
                                                 </button>
                                                 <ul class="dropdown-menu" aria-labelledby="actionMenu{{ $item->id }}">
-                                                    <li><a class="dropdown-item" href="#">Info</a></li>
+                                                    <li><a class="dropdown-item" href="{{ route("acara.show", $item->id) }}" wire:navigate>Info</a></li>
                                                     <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                    <li><a class="dropdown-item" wire:click="deleteAcara({{ $item->id }})">Delete</a></li>
+                                                    <li><a class="dropdown-item" wire:click="deleteAcara({{ $item->id }})" href="#">Delete</a></li>
                                                 </ul>
                                             </div>
                                         </td>
