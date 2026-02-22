@@ -18,6 +18,7 @@ class Acara extends Model
         'tajuk',
         'keterangan',
         'waktu',
+        'tempoh',
         'lokasi',
         'penganjur',
         'slug',
