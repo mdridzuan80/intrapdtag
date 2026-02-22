@@ -25,6 +25,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/acara/{id}', InfoAcara::class)->name('acara.show');
 });
 
-Route::get('/acara/daftar/{slug}', [AcaraController::class, 'index'])->name('acara.kehadiran.daftar');
+Route::get('/acara/hadir/{slug}', [AcaraController::class, 'hadir'])->name('acara.kehadiran.daftar');
+Route::get('/acara/hadir/status/{id}', [AcaraController::class, 'status'])->name('acara.kehadiran.status');
+
 
 require __DIR__.'/auth.php';

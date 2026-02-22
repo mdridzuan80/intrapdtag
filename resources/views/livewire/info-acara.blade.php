@@ -14,6 +14,9 @@
                     <p class="card-text"><strong>Penganjur:</strong> {{ $acara->penganjur }}</p>
                 </div>
             </div>
+
+            @livewire('list-kehadiran', ['acara' => $acara])
+
         </div>
         <div class="col-md-4">
             <div class="card mb-4">

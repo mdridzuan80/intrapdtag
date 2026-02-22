@@ -9,6 +9,10 @@ class Acara extends Model
 {
     use SoftDeletes;
 
+    protected $casts = [
+        'waktu' => 'date',
+    ];
+    
     protected $table = 'acara';
     protected $fillable = [
         'tajuk',
@@ -18,4 +22,9 @@ class Acara extends Model
         'penganjur',
         'slug',
     ];
+
+    public function kehadiran()
+    {
+        return $this->hasMany(Kehadiran::class, 'acara_id');
+    }
 }

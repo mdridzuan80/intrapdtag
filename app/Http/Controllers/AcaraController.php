@@ -8,7 +8,7 @@ class AcaraController extends Controller
 {
     public function index()
     {
-        //return view('acara.index');
+        return view('acara.index');
     }
 
     public function create(Request $request)
@@ -17,9 +17,16 @@ class AcaraController extends Controller
         return view('acara.create');
     }
 
-    public function daftar()
+    public function hadir($slug)
     {
-        return view('acara.daftar');
+        $acara = \App\Models\Acara::where('slug', $slug)->firstOrFail();
+        return view('acara.hadir', compact('acara'));
+    }
+
+    public function status($id      )
+    {
+        $kehadiran = \App\Models\Kehadiran::where('uuid', $id)->firstOrFail();
+        return view('acara.status', compact('kehadiran'));
     }
 
 }
