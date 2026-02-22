@@ -11,7 +11,7 @@
                         <div class="mb-3 has-validation">
                             <label for="tajuk" class="form-label">Tajuk Acara *</label>
                             <input type="text" class="form-control" id="tajuk" wire:model.live="tajuk" required>
-                            @error('tajuk') <div class="invalid-feedback d-block">Sila masukkan tajuk acara</div> @enderror 
+                            @error('tajuk') <div class="invalid-feedback d-block">{{ $message }}</div> @enderror 
                         </div>
                         <div class="mb-3 has-validation">
                             <label for="slug" class="form-label">Slug *</label>
@@ -21,22 +21,22 @@
                         <div class="mb-3">
                             <label for="keterangan" class="form-label">Keterangan Acara *</label>
                             <textarea class="form-control" id="keterangan" rows="3" wire:model="keterangan"></textarea>
-                            @error('keterangan') <div class="invalid-feedback d-block">Sila masukkan keterangan acara</div> @enderror
+                            @error('keterangan') <div class="invalid-feedback d-block">{{ $message }}</div> @enderror
                         </div>
                         <div class="mb-3">
                             <label for="tarikh" class="form-label">Tarikh Acara *</label>
                             <input type="date" class="form-control" id="tarikh" wire:model="tarikh" required>
-                            @error('tarikh') <div class="invalid-feedback d-block">Sila masukkan tarikh acara</div> @enderror 
+                            @error('tarikh') <div class="invalid-feedback d-block">{{ $message }}</div> @enderror 
                         </div>
                         <div class="mb-3">
                             <label for="lokasi" class="form-label">Lokasi Acara</label>
                             <input type="text" class="form-control" id="lokasi" wire:model="lokasi" required>
-                            @error('lokasi') <div class="invalid-feedback d-block">Sila masukkan lokasi acara</div> @enderror 
+                            @error('lokasi') <div class="invalid-feedback d-block">{{ $message }}</div> @enderror 
                         </div>
                         <div class="mb-3">
                             <label for="penganjur" class="form-label">Penganjur Acara *</label>
                             <input type="text" class="form-control" id="penganjur" wire:model="penganjur" required>
-                            @error('penganjur') <div class="invalid-feedback d-block">Sila masukkan penganjur acara</div> @enderror 
+                            @error('penganjur') <div class="invalid-feedback d-block">{{ $message }}</div> @enderror 
                         </div>
                         <button type="submit" class="btn btn-primary" >Simpan Acara</button>
                     </form>
