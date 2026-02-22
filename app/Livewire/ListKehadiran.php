@@ -4,6 +4,8 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use setasign\Fpdi\Fpdi;
+use Carbon\CarbonInterval;
+use Illuminate\Support\Str;
 
 class ListKehadiran extends Component
 {
@@ -77,6 +79,14 @@ class ListKehadiran extends Component
             $pdf->SetXY(10, 125); // set the position of the box
             $pdf->MultiCell(0, 5, strtoupper($kehadiran->acara->tajuk), 0, 'C'); // add the text, align to Center of cell
 
+            // Tajuk Acara
+            $pdf->SetFont('Arial', 'B', 15); // set font size
+            $pdf->SetXY(10, 140); // set the position of the box
+            $humanReadableTime = CarbonInterval::minutes($kehadiran->acara->tempoh)->cascade()->forHumans();
+            $humanReadableTime = Str::replace(["minutes", "minute"], 'minit', $humanReadableTime);
+            $humanReadableTime = Str::replace(["hours", "hour"], 'jam', $humanReadableTime);
+            $pdf->MultiCell(0, 5, "[ " . strtoupper($humanReadableTime) . " ]", 0, 'C'); // add the text, align to Center of cell
+            
             // Tarikh Acara
             $pdf->SetFont('Arial', 'B', 15); // set font size
             $pdf->SetXY(10, 167); // set the position of the box

@@ -13,6 +13,7 @@ class DaftarAcara extends Component
     public $tajuk;
     public $keterangan;
     public $tarikh;
+    public $tempoh;
     public $lokasi;
     public $penganjur;
     public $slug;
@@ -28,6 +29,7 @@ class DaftarAcara extends Component
                     'tajuk' => 'required',
                     'keterangan' => 'required',
                     'tarikh' => 'required|date',
+                    'tempoh' => 'required|integer|min:1',
                     'lokasi' => 'required',
                     'penganjur' => 'required',
                     'slug' => 'required|unique:acara,slug',
@@ -38,6 +40,9 @@ class DaftarAcara extends Component
             'keterangan.required' => 'Sila masukkan keterangan acara.',
             'tarikh.required' => 'Sila masukkan tarikh acara.',
             'tarikh.date' => 'Tarikh tidak sah.',
+            'tempoh.required' => 'Sila masukkan tempoh acara.',
+            'tempoh.integer' => 'Tempoh mesti berupa angka.',
+            'tempoh.min' => 'Tempoh mesti minimal 1 minit.',
             'lokasi.required' => 'Sila masukkan lokasi acara.',
             'penganjur.required' => 'Sila masukkan penganjur acara.',
             'slug.required' => 'Sila masukkan slug acara.',
