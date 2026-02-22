@@ -29,6 +29,11 @@
                             @error('tarikh') <div class="invalid-feedback d-block">{{ $message }}</div> @enderror 
                         </div>
                         <div class="mb-3">
+                            <label for="tempoh" class="form-label">Tempoh Acara (minit) *</label>
+                            <input type="number" class="form-control" id="tempoh" wire:model="tempoh" min="1" required>
+                            @error('tempoh') <div class="invalid-feedback d-block">{{ $message }}</div> @enderror 
+                        </div>
+                        <div class="mb-3">
                             <label for="lokasi" class="form-label">Lokasi Acara</label>
                             <input type="text" class="form-control" id="lokasi" wire:model="lokasi" required>
                             @error('lokasi') <div class="invalid-feedback d-block">{{ $message }}</div> @enderror 

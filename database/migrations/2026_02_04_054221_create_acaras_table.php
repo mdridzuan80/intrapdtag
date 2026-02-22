@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('tajuk', length: 255);
             $table->text('keterangan');
             $table->dateTime('waktu');
+            $table->unsignedInteger('tempoh'); // Tempoh dalam minit
             $table->string('lokasi', length: 255);
             $table->string('penganjur', length: 255);
             $table->string('slug', length: 255)->unique();
