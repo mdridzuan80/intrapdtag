@@ -7,12 +7,6 @@
         <div class="col-md-8">
             <div class="card mb-4">
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            {{ session('status') }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    @endif
                     <form class="needs-validation" novalidate wire:submit.prevent="simpanAcara">
                         <div class="mb-3 has-validation">
                             <label for="tajuk" class="form-label">Tajuk Acara *</label>
@@ -49,6 +43,12 @@
                             <input type="text" class="form-control" id="penganjur" wire:model="penganjur" required>
                             @error('penganjur') <div class="invalid-feedback d-block">{{ $message }}</div> @enderror 
                         </div>
+                        @if (session('status'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('status') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endif
                         <button type="submit" class="btn btn-primary">Kemaskini Acara</button>
                     </form>
                 </div>
