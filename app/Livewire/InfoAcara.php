@@ -31,7 +31,7 @@ class InfoAcara extends Component
         // Stream or download the generated PDF
         // return $pdf->stream('invoice.pdf'); // To view in browser
         return response()->streamDownload(function () use ($pdf) {
-        echo $pdf->stream();
+            echo $pdf->stream();
         }, 'acara_qr_' . $this->acara_id . '.pdf');
         //return $pdf->stream('acara_qr_' . $this->acara_id . '.pdf')->header('Content-Type','application/pdf');
         //return $pdf->download('acara_qr_' . $this->acara_id . '.pdf'); // To force download
