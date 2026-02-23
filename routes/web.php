@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\DaftarAcara;
+use App\Livewire\DaftarAcaraEdit;
 use App\Livewire\InfoAcara;
 use App\Livewire\ListAcara;
 
@@ -23,6 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/acara', ListAcara::class)->name('acara.list');
     Route::get('/acara/create', DaftarAcara::class)->name('acara.create');
     Route::get('/acara/{id}', InfoAcara::class)->name('acara.show');
+    Route::get('/acara/{id}/edit', DaftarAcaraEdit::class)->name('acara.edit');
 });
 
 Route::get('/acara/hadir/{slug}', [AcaraController::class, 'hadir'])->name('acara.kehadiran.daftar');

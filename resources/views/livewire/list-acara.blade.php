@@ -23,20 +23,20 @@
                             <table id="datatablesSimple" class="datatable-table">
                                 <thead>
                                     <tr>
-                                        <th data-sortable="true" >
-                                            <a href="#" class="datatable-sorter">Name</a>
+                                        <th >
+                                            <a href="#" >Tajuk</a>
                                         </th>
-                                        <th data-sortable="true" >
-                                            <a href="#" class="datatable-sorter">Position</a>
+                                        <th class="d-none d-lg-table-cell">
+                                            <a href="#" >Keterangan</a>
                                         </th>
-                                        <th data-sortable="true" >
-                                            <a href="#" class="datatable-sorter">Office</a>
+                                        <th class="d-none d-md-table-cell">
+                                            <a href="#" >Waktu</a>
                                         </th>
-                                        <th data-sortable="true" >
-                                            <a href="#" class="datatable-sorter">Age</a>
+                                        <th class="d-none d-md-table-cell">
+                                            <a href="#" >Lokasi</a>
                                         </th>
-                                        <th data-sortable="true" >
-                                            <a href="#" class="datatable-sorter">Start date</a>
+                                        <th class="d-none d-md-table-cell">
+                                            <a href="#" >Penganjur</a>
                                         </th>
                                         <th >
                                             Action
@@ -47,10 +47,10 @@
                                     @foreach ($acara as $item)
                                         <tr data-index="{{ $item->id }}">
                                         <td>{{ $item->tajuk }}</td>
-                                        <td>{{ $item->keterangan }}</td>
-                                        <td>{{ $item->waktu }}</td>
-                                        <td>{{ $item->lokasi }}</td>
-                                        <td>{{ $item->penganjur }}</td>
+                                        <td class="d-none d-lg-table-cell">{{ $item->keterangan }}</td>
+                                        <td class="d-none d-md-table-cell">{{ $item->waktu }}</td>
+                                        <td class="d-none d-md-table-cell">{{ $item->lokasi }}</td>
+                                        <td class="d-none d-md-table-cell">{{ $item->penganjur }}</td>
                                         <td>
                                             <div class="dropdown">
                                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="actionMenu{{ $item->id }}" data-bs-toggle="dropdown" aria-expanded="false">
@@ -58,7 +58,7 @@
                                                 </button>
                                                 <ul class="dropdown-menu" aria-labelledby="actionMenu{{ $item->id }}">
                                                     <li><a class="dropdown-item" href="{{ route("acara.show", $item->id) }}" wire:navigate>Info</a></li>
-                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                    <li><a class="dropdown-item" href="{{ route("acara.edit", $item->id) }}" wire:navigate>Edit</a></li>
                                                     <li><a class="dropdown-item" wire:click="deleteAcara({{ $item->id }})" href="#">Delete</a></li>
                                                 </ul>
                                             </div>
